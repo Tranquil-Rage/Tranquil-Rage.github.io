@@ -11,7 +11,7 @@ Examples:
 nmap -sC -sV -p- $IP --open
 ```
 
-]
+
 ##  Common UDP Services for finding misconfigurations:
 ### SNMP (See Services)
 - Versions 1 & 2 are unencrypted - sniff this with wireshark
