@@ -1,7 +1,6 @@
 ---
 title: Home
 layout: home
-# Color scheme supports "light" (default) and "dark"
 color_scheme: dark
 ----
 
