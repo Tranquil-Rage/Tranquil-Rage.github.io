@@ -36,14 +36,20 @@ Making some notes... get crackin
 <li>  VNC | 5800, 58001, 5900, 5901 </li>
 </ul>
 
-Services & Exploitation | WINDOWS
-> Kerberos | 88
-> RDP | 3389
-> WinRM | 5985 - 5986
+<h2> Services & Exploitation | WINDOWS </h2>
+<ul>
+<li>  Kerberos | 88 </li>
+<li>   RDP | 3389 </li>
+<li>   WinRM | 5985 - 5986 </li>
+</ul>
 
-Services & Exploitation | LINUX
-> NFS | 2049
+<h2> Services & Exploitation | LINUX </h2>
+<ul>
+<li>  NFS | 2049 </li>
+</ul>
 
-Tools
+<h2> Tools </h2>
 
-Resources
+<h2> Resources </h2>
+
+<h2> CTF </h2>
