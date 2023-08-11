@@ -35,6 +35,7 @@ The MIB tree values are fixed:
 | 1.3.6.1.2.1.25.6.3.1.2 | Software Name                |
 | 1.3.6.1.4.1.77.1.2.25  | User Accounts                |
 | 1.3.6.1.2.1.6.13.1.3   | TCP Local Ports              |
+
 Look For:
 - Domain names
 - Machine names
@@ -47,7 +48,7 @@ snmpwalk
 - Must provide -c (community string), -v (version -1,2 or 3), -t (timeout, e.g. 10) and $IP
 
 
-###DNS
+### DNS
 If misconfigured - extract all sub-domains and their IP addresses by using Zone Transfer
 
 ###### Ping:
