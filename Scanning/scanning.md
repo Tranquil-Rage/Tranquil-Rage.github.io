@@ -42,11 +42,11 @@ Look For:
 - Machine names
 - Usernames
 - Software Versions (antivirus?)
-##### Tools
-onesixtyone
-- Make a file called 'community' consisting of 'public, private, manager' and run onesixtyone -c community $IP
 
-snmpwalk
+##### Tools
+###### onesixtyone
+- Make a file called 'community' consisting of 'public, private, manager' and run onesixtyone -c community $IP
+###### snmpwalk
 - Must provide -c (community string), -v (version -1,2 or 3), -t (timeout, e.g. 10) and $IP
 
 
