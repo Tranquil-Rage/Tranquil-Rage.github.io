@@ -45,6 +45,7 @@ Look For:
 ##### Tools
 onesixtyone
 - Make a file called 'community' consisting of 'public, private, manager' and run onesixtyone -c community $IP
+
 snmpwalk
 - Must provide -c (community string), -v (version -1,2 or 3), -t (timeout, e.g. 10) and $IP
 
@@ -52,7 +53,7 @@ snmpwalk
 ### DNS
 If misconfigured - extract all sub-domains and their IP addresses by using Zone Transfer
 
-###### Ping:
+##### Ping:
 - A ttl of 63 means the box is linux
 
 
