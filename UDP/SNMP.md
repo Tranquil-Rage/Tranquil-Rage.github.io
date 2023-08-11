@@ -2,7 +2,7 @@
 layout: default
 title: SNMP
 parent: UDP
-nav_order: 2
+nav_order: 1
 ---
 # SNMP | 161
 - Versions 1 & 2 are unencrypted - sniff this with wireshark
