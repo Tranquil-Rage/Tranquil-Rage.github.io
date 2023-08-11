@@ -5,32 +5,36 @@ nav_order: 1
 permalink: /
 ---
 Making some notes... get crackin
-
-Recon &  OSINT
-Scanning
-Services & Exploitation
-> FTP | 21
-> SSH | 22
-> DNS | 53
-> HTTP/S | 80, 443
-> > Scanners
-> > Wordpress
-> > Drupal
-> > WebDav
-> > Authentication
-> > LFI / RFI (Local & Remote File Inclusion)
-> > Command Injection
-> > Deserialization
-> > File Upload
-> > SQL Injection
-> > XSS (Cross Site Scripting)
-> POP3 | 101
-> SNMP | 161
-> LDAP | 389
-> SMB | 445
-> MSSQL | 1443
-> MySQL | 3306
-> VNC | 5800, 58001, 5900, 5901
+----------------------------------
+<h2> Recon &  OSINT </h2>
+<h2> Scanning </h2>
+<h2> Services & Exploitation </h2>
+<ul>
+<li> FTP | 21 </li>
+<li> SSH | 22 </li>
+<li> DNS | 53 </li>
+<li> HTTP/S | 80, 443 </li>
+	<ul>
+	<li>  Scanners </li>
+	<li>  Wordpress </li>
+	<li>  Drupal </li>
+	<li>  WebDav </li>
+	<li>  Authentication </li>
+	<li>  LFI / RFI (Local & Remote File Inclusion) </li>
+	<li>  Command Injection </li>
+	<li>  Deserialization </li>
+	<li>  File Upload </li>
+	<li>  SQL Injection </li>
+	<li>  XSS (Cross Site Scripting) </li>
+	</ul>
+<li>  POP3 | 101 </li>
+<li>  SNMP | 161 </li>
+<li>  LDAP | 389 </li>
+<li>  SMB | 445 </li>
+<li>  MSSQL | 1443 </li>
+<li>  MySQL | 3306 </li>
+<li>  VNC | 5800, 58001, 5900, 5901 </li>
+</ul>
 
 Services & Exploitation | WINDOWS
 > Kerberos | 88
