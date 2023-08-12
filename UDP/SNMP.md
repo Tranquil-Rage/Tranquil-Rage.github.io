@@ -9,6 +9,11 @@ nav_order: 2
 - Version 3 is encrypted
 - Often default community strings are used (and known)
 
+## Identify with Nmap
+```
+nmap -sV -p 161 --script=snmp-info $IP-SUBNET
+```
+
 nmap scripts to extract values from targets (MIB tree included in scripts)
 - /usr/share/nmap/scripts/snmp`*`
 Example brute force using SNMP community strings:
@@ -34,8 +39,27 @@ Look For:
 - Usernames
 - Software Versions (antivirus?)
 
-##### Tools
+##### Tools - Versions 1 & 2
 ###### onesixtyone
 - Make a file called 'community' consisting of 'public, private, manager' and run onesixtyone -c community $IP
+```
+onesixtyone -c names -i hosts
+```
 ###### snmpwalk
 - Must provide -c (community string), -v (version -1,2 or 3), -t (timeout, e.g. 10) and $IP
+```
+snmpwalk -c public -v1 $IP | grep hrSWRunName
+```
+##### snmpenum
+```
+snmpenum -t $IP
+```
+##### Tools - Version 3
+##### snmpwalk wrapper
+```
+apt-get install snmp snmp-mibs-download
+wget https://raw.githubusercontent.com/raesene/TestingScripts/master/snmpv3enum.rb
+```
+
+{: .note }
+Metasploit wordlists for SNMP v1 & v2 credentials (/usr/share/metasploit-framework/data/wordlists/snmp_default_pass.txt), SecLists for a more up to date list
