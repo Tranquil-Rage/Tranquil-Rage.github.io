@@ -4,15 +4,24 @@ title: SSH
 parent: TCP
 nav_order: 4-2
 ---
-# SSH
+# SSH | 22
 ## Methodology
-- Do you have valid credentials to use?
+- Do you have alid credentials?
 - Do you have real system-level users in which to access SSH with?
 - ALWAYS check for user password re-use
 - Dealing with id_rsa files - ALWAYS chmod 600 id_rsa
 - Collect user SSH keys if able to read: "id_rsa" e.g. somefile.php?file=../../../../home/user/.ssh/id_rsa
 - If able to write, drop a SSH key into the user or root directory for login (/root/.ssh/id_rsa)
 - Are you able to read the SSH logs (SSH Log Poisoning): /var/log/auth.log
+
+#### Restrictive Shell
+If you have access to the <i>echo</i> command it is possible to use the built-in API to break out:
+``` echo os.system("/bin/bash")```
+Break out of <b> RBash </b>:
+``` ssh restricted@$IP -p 31678 -t "bash --noprofile"
+OR
+ssh user@$IP "/bin/sh"
+```
 
 #### Check the following locations for private keys:
 <ul>

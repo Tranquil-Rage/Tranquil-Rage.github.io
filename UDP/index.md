@@ -4,5 +4,6 @@ title: UDP Services
 has_children: true
 nav_order: 3
 ---
-# <a href="SNMP.md">SNMP</a>
-# <a href="DNS.md">DNS</a>
+# Common UDP Services worth checking
+## <a href="SNMP">SNMP | 161</a>
+## <a href="DNS">DNS | 53</a>

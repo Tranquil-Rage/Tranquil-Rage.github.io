@@ -4,7 +4,7 @@ title: FTP
 parent: TCP
 nav_order: 4-1
 ---
-# FTP
+# FTP | 21
 ## Methodology
 - Check for anonymous login 
 ```
