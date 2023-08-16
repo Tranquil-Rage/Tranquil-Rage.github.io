@@ -10,7 +10,7 @@ nav_order: 4-3
 ## Methodology
 <ul>
 <li> Manual Inspection ('View the source Luke') </li>
-<li> robots.txt (if it exists) </li>
+<li> robots.txt (if it exists - any restricted area or admin portals?) </li>
 <li> <a href="HTTP/IDOR">Insecure Direct Object Reference (IDOR)?</a></li>
 <li> <a href="HTTP/CMS">CMS</a></li>
 <li>  .svn entries (any left over dev stuff, repositories or data) </li>
