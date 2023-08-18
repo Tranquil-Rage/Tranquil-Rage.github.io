@@ -11,8 +11,8 @@ nav_order: 4-3
 <ul>
 <li> Manual Inspection ('View the source Luke') </li>
 <li> robots.txt (if it exists - any restricted area or admin portals?) </li>
-<li> <a href="HTTP/IDOR">Insecure Direct Object Reference (IDOR)?</a></li>
-<li> <a href="HTTP/CMS">CMS</a></li>
+<li> <a href="IDOR">Insecure Direct Object Reference (IDOR)?</a></li>
+<li> <a href="CMS">CMS</a></li>
 <li>  .svn entries (any left over dev stuff, repositories or data) </li>
 <li>  .DS_STORE (may contain sensitive info - run strings across it) </li>
 <li>  Login Forms - Authentication Bypass Attacks </li>
@@ -40,7 +40,7 @@ nav_order: 4-3
 ### Logged In:
 <ul>
 <li>Identify service versions & versioning information (search for these on exploit-db) </li>
-<li><a href="HTTP/file-upload-vulns">File upload vulnerabilities?</a></li>
+<li><a href="file-upload-vulns">File upload vulnerabilities?</a></li>
 <li> What CMS functionality can be abused if any</li>
 <li> Identify web server info </li>
 <li> Command Injection possibilities - diagnostic tools (any system level execution happening e.g. cron?) Can we schedule any system level jobs to run?</li>

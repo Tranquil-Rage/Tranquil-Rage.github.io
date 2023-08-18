@@ -5,17 +5,18 @@ parent: UDP
 nav_order: 3-1
 ---
 # DNS | 53
-If misconfigured - extract all sub-domains and their IP addresses by using Zone Transfer
+- If misconfigured - extract all sub-domains and their IP addresses by using Zone Transfer
 
-#### Windows
-Windows DNS Zone Transer:
+<br />
+#### Windows Zone Transfer
 ```
 nslookup
 set type=any
 ls -d example.com
 ```
 
-#### Linux
+<br />
+#### Linux Zone Transfer
 ```
 dig axfr example.com @ns1.example.com
 OR

