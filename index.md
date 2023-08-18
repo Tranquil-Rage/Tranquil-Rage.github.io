@@ -7,7 +7,7 @@ permalink: /
 Making some notes... get crackin
 ----------------------------------
 <h2> Recon &  OSINT </h2>
-<h2> <a href="Scanning/Scanning">Scanning</a> </h2>
+<h2> <a href="Scanning/Scanning.html">Scanning</a> </h2>
 <h2> Services & Exploitation </h2>
 <ul>
 <li> <a href="TCP/FTP">FTP | 21</a> </li>
