@@ -6,7 +6,7 @@ nav_order: 4-2
 ---
 # SSH | 22
 ## Methodology
-- Do you have alid credentials?
+- Do you have valid credentials?
 - Do you have real system-level users in which to access SSH with?
 - ALWAYS check for user password re-use
 - Dealing with id_rsa files - ALWAYS chmod 600 id_rsa
