@@ -12,10 +12,11 @@ nav_order: 4-3
 	<li> ```smbclient -L $IP``` OR ```smbclient //'192.168.1.204'/sharename -N```</li>
 	<li> Note: <b>enum4linux</b> - if the server permits null sessions, it will iterate through SIDs and gather <b>system level users</b>) ```enum4linux $IP ``` </li>
 	</ul>
-<li> Enumerate shares with nmap </li>
+<li> Enumerate shares with <b>nmap</b> </li>
 	<ul>
 	<li> ```nmap -p139,445 --script=smb-enum-shares $IP ```</li>
 	</ul>
+<li> Enumerate the domain with <b>enum4linux</b> ```enum4linux $IP```</li>
 <li> We know a share exists but have no access?</li>
 	<ul>
 	<li> crackmapexec to brute force it: ```crackmapexec smb $IP -u Username -p PasswordOrFileList```</li>
@@ -27,6 +28,7 @@ nav_order: 4-3
 	<li> If we can log in, secured folders may become read/write access - can we then do the above? </li>
 	</ul>
 <li> Always check for <b>password reuse</b> for multiple users on Windows machines </li>
+<li> Head over to <a href="../Windows">Windows Exploitation</a> which includes Impacket-LookupSIDs for SMB</li>
 </ul>
 
 ## Tools
@@ -41,5 +43,7 @@ nav_order: 4-3
 <b> Smbclient </b>
 - Download everything from a share that may be locked to a specific user, given the password (specify the password sign %)
 ```smbclient //$IP/secured -U user%password -c "prompt OFF; recurse ON; mget *"```
+> - The -L command lets you look at what services are available on the server
+> - The -I command is useful if your netbios names don't match the TCP/IP hostnames (or trying to reach a host on another network)
 
 ###### [REFERENCES]
