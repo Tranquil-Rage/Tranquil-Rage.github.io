@@ -6,6 +6,11 @@ parent: Resources
 nav_order: 5-2
 ---
 
+# Secure Copy (scp)
+- Replace a destination file (Using a SSH public key):
+```scp -i id_rsa SomeLocalFile  user@192.168.150.100:directory/someLocalFile```
+> If output is not allowed, set the legacy '-O' flag
+
 # Windows
 ## crackmapexec
 > SMB to obtain ntds file:

