@@ -62,20 +62,20 @@ Check the following locations:
 
 <br />
 #### Command Reference
-<b> Search for files containing SSH Keys:</b>
-```grep -ir "-----BEGIN RSA PRIVATE KEY-----" /home/*```
-```grep -ir "BEGIN DSA PRIVATE KEY" /*```
-<b> SSH with id_rsa </b>
-``` ssh -i id_rsa user@$IP ```
-<b> Crack id_rsa with John (SSH2John) </b>
+<b> Search for files containing SSH Keys:</b> <br />
+```grep -ir "-----BEGIN RSA PRIVATE KEY-----" /home/*``` <br />
+```grep -ir "BEGIN DSA PRIVATE KEY" /*``` <br />
+<b> SSH with id_rsa </b> <br />
+``` ssh -i id_rsa user@$IP ``` <br />
+<b> Crack id_rsa with John (SSH2John) </b> <br />
 ``` ssh2john id_rsa > crackthis
 john crackthis --wordlist=/usr/share/wordlists/rockyou.txt```
-<b> SSH Keygen & Back Door (post exploitation) </b>
-Generate a new SSH key pair with:
+<b> SSH Keygen & Back Door (post exploitation) </b> <br />
+Generate a new SSH key pair with: <br />
 ```ssh-keygen -b 2048 -t rsa -f ~/.ssh/new-key-name
 chmod 600 new-key-name```
-Drop the 'new-key-name.pub' file into the target /home/usr/.ssh directory.
-Connect with:
+Drop the 'new-key-name.pub' file into the target /home/usr/.ssh directory. <br />
+Connect with: <br />
 ```ssh -i new-key-name user@$IP```
 
 <br />
