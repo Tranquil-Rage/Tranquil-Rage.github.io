@@ -37,7 +37,9 @@ nav_order: 4-3
 	</ul>
 <li> Local Code Execution (Web Server - e.g. the server runs a ping command we could try ping -c 3 127.0.0.1;id or break the command with ping -c 3 127.0.0.1BADDATA || id)</li>
 </ul>
-### Logged In:
+
+<br />
+### Logged In
 <ul>
 <li>Identify service versions & versioning information (search for these on exploit-db) </li>
 <li><a href="file-upload-vulns">File upload vulnerabilities?</a></li>
@@ -52,20 +54,25 @@ nav_order: 4-3
 <li> Create your own malicious plugin - all you need is one authentic plugin to clone and plant your backdoor in there then upload</li>
 </ul>
 
+<br />
 ### CUPS (HTTP) Network Printers
 - The <b> PUT </b> method is risky - allows the ability to upload any file to a writeable web directory
 - If you can find a web irectory on the port number with write permissions, we could drop a file there (assuming it's unauthorised)
 
+<br />
 ### Testing for Parameter Existence
 - Particularly examine any URL that submits data across the URL String - are there any hidden backend parameters?
 Example:
 ``` 192.168.1.165/thankyou.php?FUZZ=someData```
 Where FUZZ = the parameter name to discover: <b>/seclists/Discovery/Web-Content/burp-parameter-names.txt</b>
 
+<br />
 ### Apache 
 - ALWAYS go for the Apache Configuration file to discover additional attack surfaces we may not have access to
 {: .important }
 httpd.config
+
+<br />
 #### Apache Tomcat
 <b> URI's to visit for ANY Tomcat installation: </b>
 <ul>
@@ -92,15 +99,17 @@ httpd.config
 
 </ul>
 
+<br />
 ### PHP
 <b>PHPSESSID:</b>
 - <b> httponly </b> flag is not set? This flag indicates that javascript cannot interact with the cookie (and prevents many XSS attacks)
 {: .important }
 Developers working with session IDs and secure session management <b> must </b> be setting the <b>httponly</b> flag
 
-
+<br />
 ## Directory Fuzzing / Busting
 
+<br />
 ### Tools
 - dirb
 - wfuzz
@@ -109,6 +118,7 @@ Developers working with session IDs and secure session management <b> must </b> 
 - hydra (brute-forcing)
 - sqlmap
 
+<br />
 #### Command Reference
 - ffuf/wfuzz Authentication Bypass - Username Enumeration (providing a valid list of usernames)
 ```
@@ -119,7 +129,7 @@ fuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "usern
 ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.68.173/customers/login -fc 200
 ```
 
-
+<br />
 ## Vulnerabilities
 <b>"target=_blank" vulnerability</b>
 - When used, the page we're linking to <i> gains partial access to the source page</i> via a window.opener object (similar to an open redirect vulnerability or tab nabbing)
@@ -128,6 +138,7 @@ Example Attack:
 ``` window.opener.location = 'https://fakesite/facebook.com/phishing-page.html'; ```
 - This would ultimately redirect to a page that asks for the user to re-enter their Facebook password
 
+<br />
 #### Brute-Forcing
 - hydra
 - wfuzz
