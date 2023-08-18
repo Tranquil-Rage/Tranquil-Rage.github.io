@@ -11,7 +11,7 @@ If misconfigured - extract all sub-domains and their IP addresses by using Zone 
 Windows DNS Zone Transer:
 ```
 nslookup
-> set type=any
+set type=any
 ls -d example.com
 ```
 
