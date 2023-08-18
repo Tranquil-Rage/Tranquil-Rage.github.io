@@ -2,6 +2,7 @@
 layout: default
 title: Command References & Examples
 has_children: false
+parent: Resources
 nav_order: 5-2
 ---
 
