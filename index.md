@@ -7,13 +7,13 @@ permalink: /
 Making some notes... get crackin
 ----------------------------------
 <h2> Recon &  OSINT </h2>
-<h2> Scanning </h2>
+<h2> <a href="Scanning/Scanning"Scanning</a> </h2>
 <h2> Services & Exploitation </h2>
 <ul>
-<li> FTP | 21 </li>
-<li> SSH | 22 </li>
-<li> DNS | 53 </li>
-<li> HTTP/S | 80, 443 </li>
+<li> <a href="TCP/FTP">FTP | 21</a> </li>
+<li> <a href="TCP/SSH">SSH | 22</a> </li>
+<li> <a href="UDP/DNS">DNS | 53</a> </li>
+<li> <a href="TCP/HTTP">HTTP/S | 80, 443</a> </li>
 	<ul>
 	<li>  Scanners </li>
 	<li>  Wordpress </li>
@@ -28,9 +28,9 @@ Making some notes... get crackin
 	<li>  XSS (Cross Site Scripting) </li>
 	</ul>
 <li>  POP3 | 101 </li>
-<li>  SNMP | 161 </li>
+<li>  <a href="UDP/SNMP">SNMP | 161</a> </li>
 <li>  LDAP | 389 </li>
-<li>  SMB | 445 </li>
+<li> <a href=""> SMB | 445 </a></li>
 <li>  MSSQL | 1443 </li>
 <li>  MySQL | 3306 </li>
 <li>  VNC | 5800, 58001, 5900, 5901 </li>
@@ -47,6 +47,8 @@ Making some notes... get crackin
 <ul>
 <li>  NFS | 2049 </li>
 </ul>
+
+<h2> <a href="Windows">Windows Exploitation</a></h2>
 
 <h2> Tools </h2>
 

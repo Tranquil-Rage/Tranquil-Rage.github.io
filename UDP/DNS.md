@@ -18,5 +18,7 @@ ls -d example.com
 #### Linux
 ```
 dig axfr example.com @ns1.example.com
+OR
+dig AXFR -p 53 domain-name.local @10.10.15.140
 ```
 

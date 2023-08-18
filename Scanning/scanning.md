@@ -10,14 +10,18 @@ nav_order: 2
 Nmap scripts located under: /usr/share/nmap/scripts/
 
 Examples:
+<b> Sample port scan using simple scripts & service versions </b>
 ```
 nmap -sC -sV -p- $IP --open
 ```
-> Sample port scan using simple scripts & service versions
+<b> TCP Syn 'stealth' scan - do not complete the three-way handshake </b>
 ```
 nmap -sS $IP
 ```
-> TCP Syn 'stealth' scan - do not complete the three-way handshake
+<b> Ping scan with OS detection and scripts on the nmap top ports </b>
+```
+sudo nmap -Pn -sS -sC -sV -v -oN top-ports.nmap $IP
+```
 
 ## nikto
 Basic vulnerability scanning services
