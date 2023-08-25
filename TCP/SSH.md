@@ -13,6 +13,7 @@ nav_order: 4-2
 - Collect user SSH keys if able to read: "id_rsa" e.g. somefile.php?file=../../../../home/user/.ssh/id_rsa
 - If able to write, drop a SSH key into the user or root directory for login (/root/.ssh/id_rsa)
 - Are you able to read the SSH logs (SSH Log Poisoning): /var/log/auth.log
+- If you have a SSH key needing a passphrase try to crack it using ssh2john (see attacks below)
 
 <br/>
 ###  Restrictive Shell
@@ -114,6 +115,11 @@ Example PHP web server (capable of viewing the logs):
 - Hydra
 ``` hydra -V -L UserList -P PasswordList ssh://$IP ```
 - SSB
+
+<br />
+<b> Crack an SSH Key Passphrase with SSH2john </b>
+- chmod 600 id_rsa
+```ssh2john id_rsa > crackme.hash```<br /> ```john --wordlist=/usr/share/wordlists/rockyou.txt crackme.hash```
 
 <br />
 

@@ -36,6 +36,7 @@ nav_order: 4-3
 	<li> Fuzz password reset forms to see if there is any additional hidden input/parameters</li>
 	</ul>
 <li> Local Code Execution (Web Server - e.g. the server runs a ping command we could try ping -c 3 127.0.0.1;id or break the command with ping -c 3 127.0.0.1BADDATA || id)</li>
+<li> <a href="LFI-RFI">LFI / RFI</a></li>
 </ul>
 
 <br />

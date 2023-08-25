@@ -16,22 +16,25 @@ Making some notes... get crackin
 <li> <a href="TCP/HTTP">HTTP/S | 80, 443</a> </li>
 	<ul>
 	<li>  Scanners </li>
-	<li>  Wordpress </li>
-	<li>  Drupal </li>
+	<li>  <a href="TCP/HTTP/CMS">Wordpress</a></li>
+	<li>  <a href="TCP/HTTP/CMS">Drupal</a> </li>
+	<li> <a href="TCP/HTTP/IDOR">IDOR (Insecure Direct Object Reference</a></li>
 	<li>  WebDav </li>
 	<li>  Authentication </li>
-	<li>  LFI / RFI (Local & Remote File Inclusion) </li>
+	<li>  <a href="TCP/HTTP/LFI-RFI"> Directory Traversal & LFI / RFI (Local & Remote File Inclusion)</a></li>
 	<li>  Command Injection </li>
+	<li>  <a href="TCP/HTTP/SSTI">SSTI (Server Side Template Injection)</a> </li>
 	<li>  Deserialization </li>
-	<li>  File Upload </li>
+	<li>  <a href="TCP/HTTP/file-upload-vulns">File Upload Vulnerabilities </a></li>
 	<li>  SQL Injection </li>
-	<li>  XSS (Cross Site Scripting) </li>
+	<li>  <a href="TCP/HTTP/XSS">XSS (Cross Site Scripting)</a> </li>
 	</ul>
 <li>  POP3 | 101 </li>
 <li>  <a href="UDP/SNMP">SNMP | 161</a> </li>
 <li>  LDAP | 389 </li>
 <li> <a href=""> SMB | 445 </a></li>
 <li>  MSSQL | 1443 </li>
+<li>  <a href="TCP/NFS">NFS | 2049</a></li>
 <li>  MySQL | 3306 </li>
 <li>  VNC | 5800, 58001, 5900, 5901 </li>
 </ul>
