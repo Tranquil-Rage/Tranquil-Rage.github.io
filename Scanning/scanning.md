@@ -18,10 +18,20 @@ nmap -sC -sV -p- $IP --open
 ```
 nmap -sS $IP
 ```
-<b> Ping scan with OS detection and scripts on the nmap top ports </b>
+<b> Ping scan with OS detection& scripts, top ports and output in nmap format </b>
 ```
 sudo nmap -Pn -sS -sC -sV -v -oN top-ports.nmap $IP
 ```
+
+<b> Always </b> run a UDP scan after finishing your tscp scan to check for services like SNMP & DNS looking for misconfigurations.
+```
+sudo nmap -sU -p160-162 $IP
+```
+<b> Use Nmap scripts to enumerate SMB shares & ysers</b>
+```
+nmap -p445 --script=smb-enum-shares,smb-enum-users $IP
+```
+
 
 ## nikto
 Basic vulnerability scanning services
@@ -29,9 +39,13 @@ Basic vulnerability scanning services
 nikto -host $IP
 ```
 
-## [INFORMATION]
-##### Ping:
-- A ttl of 63 means the box is linux
+#### [INFORMATION]
+<b>TTL Ping Identification </b>
+- 64 - Linux, FreeBSD, MacOS
+- 128 - Windows XP, 7, 8, 2003+
+- 254 - Cisco
+- 255 - Solaris
+
 
 
 ----
